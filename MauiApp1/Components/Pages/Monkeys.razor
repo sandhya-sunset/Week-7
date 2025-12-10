@@ -1,0 +1,69 @@
+﻿@page "/monkeys"
+
+<h2>Monkeys List</h2>
+
+@if (monkeys.Count == 0)
+{
+    <p>No monkeys found</p>
+}
+else
+{
+    <div style="display:flex; gap:20px; flex-wrap:wrap;">
+        @foreach (var m in monkeys)
+        {
+            <div style="border:1px solid #ccc; padding:10px; width:250px; border-radius:10px;">
+                <img src="@m.Image" width="230" style="border-radius:10px;" />
+                <h3>@m.Name</h3>
+                <p>@m.Location</p>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    class Monkey
+    {
+        public string Name { get; set; }
+        public string Location { get; set; }
+        public string Image { get; set; }
+    }
+
+    List<Monkey> monkeys = new List<Monkey>
+    {
+        new Monkey {
+            Name = "Baboon",
+            Location = "Africa & Asia",
+            Image = "https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/baboon.jpg"
+        },
+        new Monkey {
+            Name = "Capuchin Monkey",
+            Location = "Central & South America",
+            Image = "https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/capuchin.jpg"
+        },
+        new Monkey {
+            Name = "Blue Monkey",
+            Location = "Central and East Africa",
+            Image = "https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/bluemonkey.jpg"
+        },
+         new Monkey {
+            Name = "Moustached Monkey",
+            Location = "East Africa",
+            Image = "https://cdn.britannica.com/50/11350-050-DF544541/species-guenon.jpg?w=300"
+        },
+        new Monkey {
+            Name = "Spider Monkey",
+            Location = "Southern Mexico",
+            Image = "https://cdn.britannica.com/27/153227-050-E16883B9/Geoffroy-spider-monkey.jpg?w=300"
+        },
+         new Monkey {
+            Name = "Moustached Monkey",
+            Location = "East Africa",
+            Image = "https://cdn.britannica.com/50/11350-050-DF544541/species-guenon.jpg?w=300"
+        },
+        new Monkey {
+            Name = "Spider Monkey",
+            Location = "Southern Mexico",
+            Image = "https://cdn.britannica.com/27/153227-050-E16883B9/Geoffroy-spider-monkey.jpg?w=300"
+        }
+    };
+}

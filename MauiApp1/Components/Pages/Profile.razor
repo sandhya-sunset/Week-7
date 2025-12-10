@@ -1,0 +1,16 @@
+﻿@page "/profile"
+
+<h2>Student Profile</h2>
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAXaG33Bhqe6mWbT_7PqdO2pQ1gfScozTqJA&s" width="200" />
+
+<p><strong>Name:</strong> @studentName</p>
+<p><strong>Course:</strong> @courseName</p>
+<p><strong>Batch:</strong> @batchYear</p>
+
+@code {
+    string photoPath = "images/student1.jpg";
+    string studentName = "Sandhya Majhi";
+    string courseName = ".NET MAUI Hybrid Training";
+    string batchYear = "2025";
+}
